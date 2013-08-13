@@ -57,8 +57,8 @@ nnoremap <leader>p "+p
 nnoremap <leader>y "+y
 vnoremap <leader>p "+p
 vnoremap <leader>y "+y
-inoremap <leader>y <esc>"+yi
-inoremap <leader>p <esc>"+pi
+inoremap <leader>y <esc>"+ya
+inoremap <leader>p <esc>"+pa
 
 nnoremap j gj
 nnoremap k gk
