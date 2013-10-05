@@ -26,9 +26,14 @@ set t_Co=256
 
 " Hacks
 nnoremap ; :
-noremap <F5> :GundoToggle<CR>
-noremap <F2> :NERDTree<CR>
+command MakeAndOpen make! | copen
+nnoremap <F9> :MakeAndOpen<CR>
+nnoremap <F10> :make!<CR>
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <F2> :NERDTree<CR>
 cmap w!! %!sudo tee > /dev/null %
+let NERDTreeIgnore = ['\.pyc$']
+
 
 " Syntax
 filetype plugin indent on
@@ -88,6 +93,8 @@ set backspace=indent,eol,start
 autocmd BufNewFile,BufRead *.go set filetype=go
 " Support for markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+" Support for horn
+autocmd BufNewFile,BufRead *.hn set filetype=horn
 
 " Screw temp files
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
