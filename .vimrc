@@ -33,6 +33,8 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <F2> :NERDTree<CR>
 cmap w!! %!sudo tee > /dev/null %
 let NERDTreeIgnore = ['\.pyc$']
+let g:ctrlp_working_path_mode = 'raw'
+let g:ctrlp_root_markers = ['.projroot']
 
 
 " Syntax
