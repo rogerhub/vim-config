@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/ctrp"]
+	path = .vim/bundle/ctrp
+	url = https://github.com/kien/ctrlp.vim.git
