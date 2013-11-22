@@ -26,8 +26,8 @@ set t_Co=256
 
 " Hacks
 nnoremap ; :
-command MakeAndOpen make! | copen
-nnoremap <F9> :MakeAndOpen<CR>
+" Note the space below!
+nnoremap <F9> :Ack 
 nnoremap <F10> :make!<CR>
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <F2> :NERDTree<CR>
