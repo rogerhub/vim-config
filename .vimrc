@@ -52,7 +52,7 @@ set mouse=a
 " For gVIIM
 set guioptions-=m
 set guioptions-=T
-set guifont=Monospace\ 9
+set guifont=DejaVu\ Sans\ Mono\ 7.2
 
 " PageUp and PageDown Behavior
 nnoremap <silent> <PageUp> <C-U>
