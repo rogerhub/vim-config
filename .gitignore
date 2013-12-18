@@ -2,3 +2,4 @@
 .vim/swap/*
 *.swp
 *.swo
+.vim/.netrwhist
