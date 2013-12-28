@@ -93,6 +93,11 @@ set smartindent
 set indentexpr=
 set backspace=indent,eol,start
 
+" HTML Indentation
+let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
+let g:html_indent_script1="inc"
+let g:html_indent_style1="inc"
+
 " Support for go
 autocmd BufNewFile,BufRead *.go set filetype=go
 " Support for markdown
