@@ -29,6 +29,12 @@ nnoremap ; :
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
 nnoremap <F12> :Text<CR>
 " Note the space below!
+nnoremap <F3> :q<CR>
+nnoremap <leader>v :vsp<CR>
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>a :tabp<CR>
+nnoremap <leader>s :tabn<CR>
 nnoremap <F9> :Ack 
 nnoremap <F10> :make!<CR>
 nnoremap <F5> :GundoToggle<CR>
