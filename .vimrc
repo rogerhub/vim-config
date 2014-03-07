@@ -6,8 +6,6 @@ set shiftwidth=4
 set tabstop=4
 set noexpandtab
 
-execute pathogen#infect()
-
 set incsearch
 set listchars=tab:▸\ ,eol:¬
 set number
@@ -45,13 +43,6 @@ cmap w!! %!sudo tee > /dev/null %
 let NERDTreeIgnore = ['\.pyc$','\.class$']
 let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_root_markers = ['.projroot']
-
-
-" Syntax
-filetype plugin indent on
-syntax on
-colorscheme solarized
-set background=light
 
 " Mouse
 set mousehide
@@ -117,3 +108,12 @@ autocmd BufNewFile,BufRead *.hn set filetype=horn
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
+
+execute pathogen#infect()
+
+" Syntax
+filetype plugin indent on
+syntax on
+colorscheme solarized
+set background=light
+
