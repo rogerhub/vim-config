@@ -33,8 +33,6 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>v :vsp<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>a :tabp<CR>
-nnoremap <leader>s :tabn<CR>
 nnoremap <F8> :make!<CR>
 nnoremap <F9> :Ack 
 nnoremap <F5> :GundoToggle<CR>
@@ -110,6 +108,11 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
 execute pathogen#infect()
+
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<leader>a'
 
 " Syntax
 filetype plugin indent on
