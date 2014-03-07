@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/puppet-vim"]
 	path = .vim/bundle/puppet-vim
 	url = https://github.com/rogerhub/puppet-vim.git
+[submodule ".vim/bundle/emmet-vim"]
+	path = .vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
