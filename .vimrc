@@ -33,6 +33,10 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>v :vsp<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 nnoremap <F8> :make!<CR>
 nnoremap <F9> :Ack 
 nnoremap <F5> :GundoToggle<CR>
