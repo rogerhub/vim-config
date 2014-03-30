@@ -46,6 +46,10 @@ cmap w!! %!sudo tee > /dev/null %
 let NERDTreeIgnore = ['\.pyc$','\.class$']
 let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_root_markers = ['.projroot']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|class|pyc)$',
+  \ }
 
 " Mouse
 set mousehide
