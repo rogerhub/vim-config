@@ -38,6 +38,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-M> :m .+1<CR>==
+nnoremap <C-I> :m .-2<CR>==
+vnoremap <C-M> :m '>+1<CR>gv=gv
+vnoremap <C-I> :m '<-2<CR>gv=gv
 nnoremap <F8> :make!<CR>
 nnoremap <F9> :Ack 
 nnoremap <F5> :GundoToggle<CR>
