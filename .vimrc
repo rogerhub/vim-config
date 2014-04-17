@@ -1,6 +1,10 @@
 " Basics
 set nocompatible
 
+if $SHELL =~ 'bin/fish'
+  set shell=/bin/zsh
+endif
+
 " Vim sleuth
 set shiftwidth=4
 set tabstop=4
