@@ -38,6 +38,7 @@ nnoremap <leader>v :vsp<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>l :set list!<CR>
+nnoremap <leader>n :enew<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -62,7 +63,12 @@ set mouse=a
 " For gVIIM
 set guioptions-=m
 set guioptions-=T
-set guifont=DejaVu\ Sans\ Mono\ 7.2
+set guioptions-=R
+set guioptions-=r
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
+set guifont=Ubuntu\ Mono\ 13
 
 " PageUp and PageDown Behavior
 nnoremap <silent> <PageUp> <C-U>
@@ -130,6 +136,6 @@ let g:user_emmet_leader_key='<leader>a'
 " Syntax
 filetype plugin indent on
 syntax on
-colorscheme solarized
+" colorscheme solarized
 set background=light
 
