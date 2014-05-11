@@ -305,6 +305,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("jinjaAttribute", "dd7700", "fbf4c7", "")
     call <SID>X("jinjaSpecial", "008ffd", "fbf4c7", "")
 
+    call <SID>X("ExtraWhitespace", "ffffff", "ff0000", "")
+
     " delete functions {{{
     delf <SID>X
     delf <SID>rgb
