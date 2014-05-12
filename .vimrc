@@ -68,6 +68,7 @@ set guioptions-=r
 set guioptions-=l
 set guioptions-=L
 set guioptions-=b
+set guioptions+=c
 set guifont=Ubuntu\ Mono\ 13
 
 " PageUp and PageDown Behavior
