@@ -69,7 +69,7 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=b
 set guioptions+=c
-set guifont=Ubuntu\ Mono\ 13
+set guifont=Ubuntu\ Mono\ 13,Menlo\ Regular:h14
 
 " PageUp and PageDown Behavior
 nnoremap <silent> <PageUp> <C-U>
