@@ -29,6 +29,7 @@ set t_Co=256
 " Hacks
 nnoremap ; :
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
+command W w
 nnoremap <F12> :Text<CR>
 " Note the space below!
 nnoremap <F3> :q<CR>
