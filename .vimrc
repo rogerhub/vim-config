@@ -2,7 +2,7 @@
 set nocompatible
 
 if $SHELL =~ 'bin/fish'
-  set shell=/bin/zsh
+  set shell=/bin/bash
 endif
 
 " Vim sleuth
