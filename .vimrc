@@ -58,8 +58,8 @@ nn <script> <SID>ldr] :tabnext<CR><SID>ldr
 vn <script> <SID>ldr] :tabnext<CR><SID>ldr
 nn <script> <SID>ldr[ :tabprevious<CR><SID>ldr
 vn <script> <SID>ldr[ :tabprevious<CR><SID>ldr
-nn <script> <SID>ldrb :set timeoutlen=1000<CR>:ls<CR>:b
-vn <script> <SID>ldrb :set timeoutlen=1000<CR>:ls<CR>:b
+nn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
+vn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
 nn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
 vn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
 nn <script> <SID>ldro :set timeoutlen=1000<CR>:e 
@@ -68,6 +68,10 @@ nn <script> <SID>ldre :set timeoutlen=1000<CR>:e
 vn <script> <SID>ldre :set timeoutlen=1000<CR>:e 
 nn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
 vn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
+nn <script> <SID>ldrh :set timeoutlen=1000<CR>:help 
+vn <script> <SID>ldrh :set timeoutlen=1000<CR>:help 
+nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
+vn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 nmap <SID>ldr :set timeoutlen=1000<CR>
 vmap <SID>ldr :set timeoutlen=1000<CR>
 
