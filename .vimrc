@@ -6,9 +6,9 @@ if $SHELL =~ 'bin/fish'
 endif
 
 " Vim sleuth
-set shiftwidth=4
-set tabstop=4
-set noexpandtab
+set shiftwidth=2
+set tabstop=2
+set expandtab
 
 set incsearch
 set listchars=tab:▸\ ,eol:¬
@@ -24,36 +24,75 @@ set wildmenu
 " Make sure words contain dash
 set iskeyword+=-
 
+" Set number of colors to 256
 set t_Co=256
 
-" Hacks
-nnoremap ; :
+" tinymode.vim
+nmap , :set timeoutlen=86400000<CR><SID>ldr
+vmap , :set timeoutlen=86400000<CR><SID>ldr
+nn <script> <SID>ldr, <SID>ldr
+vn <script> <SID>ldr, <SID>ldr
+nn <script> <SID>ldrp "+p<SID>ldr
+vn <script> <SID>ldrp "+p<SID>ldr
+nn <script> <SID>ldry "+y<SID>ldr
+vn <script> <SID>ldry "+y<SID>ldr
+nn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
+vn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
+nn <script> <SID>ldr0 :Text<CR><SID>ldr
+vn <script> <SID>ldr0 :Text<CR><SID>ldr
+nn <script> <SID>ldrl :set list!<CR><SID>ldr
+vn <script> <SID>ldrl :set list!<CR><SID>ldr
+nn <script> <SID>ldrx :x<CR><SID>ldr
+vn <script> <SID>ldrx :x<CR><SID>ldr
+nn <script> <SID>ldrq :q<CR><SID>ldr
+vn <script> <SID>ldrq :q<CR><SID>ldr
+nn <script> <SID>ldrw :w<CR><SID>ldr
+vn <script> <SID>ldrw :w<CR><SID>ldr
+nn <script> <SID>ldrv :vsp<CR><SID>ldr
+vn <script> <SID>ldrv :vsp<CR><SID>ldr
+nn <script> <SID>ldrs :sp<CR><SID>ldr
+vn <script> <SID>ldrs :sp<CR><SID>ldr
+nn <script> <SID>ldrt :tabnew<CR><SID>ldr
+vn <script> <SID>ldrt :tabnew<CR><SID>ldr
+nn <script> <SID>ldr] :tabnext<CR><SID>ldr
+vn <script> <SID>ldr] :tabnext<CR><SID>ldr
+nn <script> <SID>ldr[ :tabprevious<CR><SID>ldr
+vn <script> <SID>ldr[ :tabprevious<CR><SID>ldr
+nn <script> <SID>ldrb :set timeoutlen=1000<CR>:ls<CR>:b
+vn <script> <SID>ldrb :set timeoutlen=1000<CR>:ls<CR>:b
+nn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
+vn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
+nn <script> <SID>ldro :set timeoutlen=1000<CR>:e 
+vn <script> <SID>ldro :set timeoutlen=1000<CR>:e 
+nn <script> <SID>ldre :set timeoutlen=1000<CR>:e 
+vn <script> <SID>ldre :set timeoutlen=1000<CR>:e 
+nn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
+vn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
+nmap <SID>ldr :set timeoutlen=1000<CR>
+vmap <SID>ldr :set timeoutlen=1000<CR>
+
+" Commands
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
 command W w
-nnoremap <F12> :Text<CR>
-" Note the space below!
-nnoremap <F3> :q<CR>
-nnoremap <leader>x :x<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>v :vsp<CR>
-nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>l :set list!<CR>
-nnoremap <leader>n :enew<CR>
+cabbrev man help
+
+" Hacks
+map . <Nop>
+nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <F8> :make!<CR>
-nnoremap <F9> :Ack 
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F2> :NERDTree<CR>
 cmap w!! %!sudo tee > /dev/null %
+
+" NERDTree
 let NERDTreeIgnore = ['\.pyc$','\.class$']
+
+" CTRL P
 let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_root_markers = ['.projroot']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|bundle)$',
   \ 'file': '\v\.(exe|so|dll|class|pyc)$',
   \ }
 
@@ -80,16 +119,8 @@ nnoremap <silent> <PageDown> <C-D>
 vnoremap <silent> <PageDown> <C-D>
 inoremap <silent> <PageDown> <C-\><C-O><C-D>
 
-nnoremap <leader>p "+p
-nnoremap <leader>y "+y
-vnoremap <leader>p "+p
-vnoremap <leader>y "+y
-" inoremap <leader>y <esc>"+ya
-" inoremap <leader>p <esc>"+pa
-
 nnoremap j gj
 nnoremap k gk
-
 vnoremap j gj
 vnoremap k gk
 nnoremap <Down> gj
@@ -98,11 +129,6 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
-
-" Autocorrect
-iabbrev hte the
-iabbrev teh the
-iabbrev adn and
 
 " Eh?
 set modelines=0
