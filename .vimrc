@@ -27,6 +27,9 @@ set iskeyword+=-
 " Set number of colors to 256
 set t_Co=256
 
+" copy paste buffer
+vn <leader>y "+y
+
 " tinymode.vim
 nmap , :set timeoutlen=86400000<CR><SID>ldr
 vmap , :set timeoutlen=86400000<CR><SID>ldr
