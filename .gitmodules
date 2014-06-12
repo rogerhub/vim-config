@@ -45,4 +45,4 @@
 	url = https://github.com/mattn/emmet-vim.git
 [submodule ".vim/bundle/puppet-syntax-vim"]
 	path = .vim/bundle/puppet-syntax-vim
-	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+	url = https://github.com/rogerhub/puppet-syntax-vim.git
