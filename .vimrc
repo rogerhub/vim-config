@@ -77,6 +77,8 @@ nn <script> <SID>ldrh :set timeoutlen=1000<CR>:help
 vn <script> <SID>ldrh :set timeoutlen=1000<CR>:help 
 nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 vn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
+nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
+vn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
 nmap <SID>ldr :set timeoutlen=1000<CR>
 vmap <SID>ldr :set timeoutlen=1000<CR>
 
