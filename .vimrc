@@ -28,6 +28,8 @@ set iskeyword+=-
 set t_Co=256
 
 " copy paste buffer
+nn <leader>p "+p
+nn <leader>P "+P
 vn <leader>y "+y
 
 " tinymode.vim
@@ -37,14 +39,14 @@ nn <script> <SID>ldr, <SID>ldr
 vn <script> <SID>ldr, <SID>ldr
 nn <script> <SID>ldrp "+p<SID>ldr
 vn <script> <SID>ldrp "+p<SID>ldr
-nn <script> <SID>ldry "+y<SID>ldr
-vn <script> <SID>ldry "+y<SID>ldr
+nn <script> <SID>ldrP "+P<SID>ldr
+vn <script> <SID>ldrP "+P<SID>ldr
 nn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
 vn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
 nn <script> <SID>ldr0 :Text<CR><SID>ldr
 vn <script> <SID>ldr0 :Text<CR><SID>ldr
-nn <script> <SID>ldrl :set list!<CR><SID>ldr
-vn <script> <SID>ldrl :set list!<CR><SID>ldr
+nn <script> <SID>ldrL :set list!<CR><SID>ldr
+vn <script> <SID>ldrL :set list!<CR><SID>ldr
 nn <script> <SID>ldrx :x<CR><SID>ldr
 vn <script> <SID>ldrx :x<CR><SID>ldr
 nn <script> <SID>ldrq :q<CR><SID>ldr
