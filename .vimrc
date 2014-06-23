@@ -12,7 +12,7 @@ set expandtab
 
 set incsearch
 set listchars=tab:▸\ ,eol:¬
-set number
+set nonumber
 set ruler
 set scrolloff=3
 set showcmd
@@ -79,6 +79,8 @@ nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 vn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
 vn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
+nn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
+vn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
 nmap <SID>ldr :set timeoutlen=1000<CR>
 vmap <SID>ldr :set timeoutlen=1000<CR>
 
