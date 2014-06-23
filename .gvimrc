@@ -5,10 +5,10 @@ nnoremap <C-S-Tab> :tabp<CR>
 nnoremap <C-T> :tabnew<CR>
 nnoremap <C-W> :q<CR>
 
-function! StartUp()
-    if 0 == argc()
-        NERDTree
-    end
-endfunction
+" function! StartUp()
+"     if 0 == argc()
+"         NERDTree
+"     end
+" endfunction
 
-autocmd VimEnter * call StartUp()
+" autocmd VimEnter * call StartUp()
