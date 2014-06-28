@@ -108,6 +108,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|bundle)$',
   \ 'file': '\v\.(exe|so|dll|class|pyc)$',
   \ }
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Mouse
 set mousehide
