@@ -27,54 +27,35 @@ set iskeyword+=-
 " Set number of colors to 256
 set t_Co=256
 
-" copy paste buffer
-nn <leader>p "+p
-nn <leader>P "+P
-vn <leader>y "+y
-
 " tinymode.vim
 nmap , :set timeoutlen=86400000<CR><SID>ldr
 vmap , :set timeoutlen=86400000<CR><SID>ldr
 nn <script> <SID>ldr, <SID>ldr
 vn <script> <SID>ldr, <SID>ldr
-nn <script> <SID>ldrp "+p<SID>ldr
-vn <script> <SID>ldrp "+p<SID>ldr
-nn <script> <SID>ldrP "+P<SID>ldr
-vn <script> <SID>ldrP "+P<SID>ldr
 nn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
 vn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
 nn <script> <SID>ldr0 :Text<CR><SID>ldr
 vn <script> <SID>ldr0 :Text<CR><SID>ldr
 nn <script> <SID>ldrL :set list!<CR><SID>ldr
 vn <script> <SID>ldrL :set list!<CR><SID>ldr
-nn <script> <SID>ldrx :x<CR><SID>ldr
-vn <script> <SID>ldrx :x<CR><SID>ldr
+nn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
+vn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
 nn <script> <SID>ldrq :q<CR><SID>ldr
 vn <script> <SID>ldrq :q<CR><SID>ldr
-nn <script> <SID>ldrw :w<CR><SID>ldr
-vn <script> <SID>ldrw :w<CR><SID>ldr
+nn <script> <SID>ldrw :set timeoutlen=1000<CR>:w<CR>
+vn <script> <SID>ldrw :set timeoutlen=1000<CR>:w<CR>
 nn <script> <SID>ldrv :vsp<CR><SID>ldr
 vn <script> <SID>ldrv :vsp<CR><SID>ldr
 nn <script> <SID>ldrs :sp<CR><SID>ldr
 vn <script> <SID>ldrs :sp<CR><SID>ldr
 nn <script> <SID>ldrt :tabnew<CR><SID>ldr
 vn <script> <SID>ldrt :tabnew<CR><SID>ldr
-nn <script> <SID>ldr] :tabnext<CR><SID>ldr
-vn <script> <SID>ldr] :tabnext<CR><SID>ldr
-nn <script> <SID>ldr[ :tabprevious<CR><SID>ldr
-vn <script> <SID>ldr[ :tabprevious<CR><SID>ldr
 nn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
 vn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
 nn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
 vn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
-nn <script> <SID>ldro :set timeoutlen=1000<CR>:e 
-vn <script> <SID>ldro :set timeoutlen=1000<CR>:e 
-nn <script> <SID>ldre :set timeoutlen=1000<CR>:e 
-vn <script> <SID>ldre :set timeoutlen=1000<CR>:e 
 nn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
 vn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
-nn <script> <SID>ldrh :set timeoutlen=1000<CR>:help 
-vn <script> <SID>ldrh :set timeoutlen=1000<CR>:help 
 nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 vn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
@@ -91,6 +72,7 @@ cabbrev man help
 
 " Hacks
 map . <Nop>
+map K <Nop>
 nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
