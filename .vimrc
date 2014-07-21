@@ -14,9 +14,9 @@ set incsearch
 set listchars=tab:▸\ ,eol:¬
 set nonumber
 set ruler
-set scrolloff=3
+set scrolloff=0
 set showcmd
-set showmode
+set noshowmode
 set tabpagemax=50
 set wildmode=longest:list,full
 set wildmenu
