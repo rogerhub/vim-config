@@ -20,6 +20,10 @@ set noshowmode
 set tabpagemax=50
 set wildmode=longest:list,full
 set wildmenu
+set wrap
+set lbr
+set showbreak=...
+set synmaxcol=0
 
 " Make sure words contain dash
 set iskeyword+=-
@@ -32,6 +36,8 @@ nmap , :set timeoutlen=86400000<CR><SID>ldr
 vmap , :set timeoutlen=86400000<CR><SID>ldr
 nn <script> <SID>ldr, <SID>ldr
 vn <script> <SID>ldr, <SID>ldr
+nn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
+vn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
 nn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
 vn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
 nn <script> <SID>ldr0 :Text<CR><SID>ldr
@@ -69,6 +75,7 @@ vmap <SID>ldr :set timeoutlen=1000<CR>
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
 command W w
 cabbrev man help
+cabbrev muf MultipleCursorsFind
 
 " Hacks
 map . <Nop>
