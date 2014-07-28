@@ -76,10 +76,20 @@ command Text set sw=2 ts=2 et cc=81 tw=80 spell
 command W w
 cabbrev man help
 cabbrev muf MultipleCursorsFind
+cabbrev E e
+cabbrev Q q
 
 " Hacks
 map . <Nop>
 map K <Nop>
+nnoremap m d
+vnoremap m d
+nnoremap M D
+vnoremap M D
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
 nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -157,8 +167,6 @@ silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
-execute pathogen#infect()
-
 " Emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -169,4 +177,6 @@ filetype plugin indent on
 syntax on
 " colorscheme solarized
 set background=light
+
+execute pathogen#infect()
 
