@@ -86,6 +86,10 @@ nnoremap m d
 vnoremap m d
 nnoremap M D
 vnoremap M D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
 nnoremap d "_d
 vnoremap d "_d
 nnoremap D "_D
