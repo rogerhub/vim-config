@@ -75,7 +75,7 @@ vmap <SID>ldr :set timeoutlen=1000<CR>
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
 command W w
 cabbrev man help
-cabbrev muf MultipleCursorsFind
+cabbrev mc MultipleCursorsFind
 cabbrev E e
 cabbrev Q q
 
