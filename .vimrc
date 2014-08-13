@@ -78,6 +78,7 @@ cabbrev man help
 cabbrev mc MultipleCursorsFind
 cabbrev E e
 cabbrev Q q
+cabbrev X x
 cabbrev Set set
 
 " Hacks
