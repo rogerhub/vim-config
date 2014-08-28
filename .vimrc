@@ -24,6 +24,7 @@ set wrap
 set lbr
 set showbreak=...
 set synmaxcol=0
+set tags=./tags,tags;/
 
 " Make sure words contain dash
 set iskeyword+=-
