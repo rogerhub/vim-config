@@ -85,6 +85,10 @@ cabbrev Set set
 " Hacks
 map . <Nop>
 map K <Nop>
+map Q <Nop>
+map q: <Nop>
+map q/ <Nop>
+map q? <Nop>
 nnoremap m d
 vnoremap m d
 nnoremap M D
