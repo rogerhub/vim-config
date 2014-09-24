@@ -25,6 +25,8 @@ set lbr
 set showbreak=...
 set synmaxcol=0
 set tags=./tags,tags;/
+set noeb
+set novb
 
 " Make sure words contain dash
 set iskeyword+=-
