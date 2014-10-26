@@ -81,6 +81,7 @@ cabbrev man help
 cabbrev mc MultipleCursorsFind
 cabbrev E e
 cabbrev Q q
+cabbrev Qa qa
 cabbrev X x
 cabbrev Set set
 
