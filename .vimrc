@@ -27,9 +27,9 @@ set synmaxcol=0
 set tags=./tags,tags;/
 set noeb
 set novb
-
-" Make sure words contain dash
-set iskeyword+=-
+set ignorecase
+set nosmartcase
+set gdefault
 
 " Set number of colors to 256
 set t_Co=256
@@ -71,6 +71,8 @@ nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
 vn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
 nn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
 vn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
+nn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
+vn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
 nmap <SID>ldr :set timeoutlen=1000<CR>
 vmap <SID>ldr :set timeoutlen=1000<CR>
 
@@ -121,7 +123,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|bundle)$',
   \ 'file': '\v\.(exe|so|dll|class|pyc)$',
   \ }
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
+" Disable ctrlp switch buffer
+let g:ctrlp_switch_buffer = ''
 
 " Mouse
 set mousehide
@@ -175,6 +179,10 @@ autocmd BufNewFile,BufRead *.go set filetype=go
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Support for horn
 autocmd BufNewFile,BufRead *.hn set filetype=horn
+" Support for CPPCMS tmpl
+autocmd BufNewFile,BufRead *.tmpl set filetype=tmpl
+
+autocmd FileType puppet set commentstring=#\ %s
 
 " Screw temp files
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
@@ -185,6 +193,9 @@ set directory=~/.vim/swap//
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<leader>a'
+
+" Make sure words contain dash in CSS, SASS, HTML, etc
+autocmd FileType html,css,sass,javascript set iskeyword+=-
 
 " Syntax
 filetype plugin indent on
