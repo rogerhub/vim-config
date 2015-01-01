@@ -1,21 +1,12 @@
 [submodule ".vim/bundle/gundo.vim"]
 	path = .vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/minibufexpl.vim"]
-	path = .vim/bundle/minibufexpl.vim
-	url = https://github.com/fholgado/minibufexpl.vim.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/numbers.vim"]
-	path = .vim/bundle/numbers.vim
-	url = https://github.com/myusuf3/numbers.vim.git
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/vim-misc"]
 	path = .vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
@@ -25,9 +16,6 @@
 [submodule ".vim/bundle/vim-sleuth"]
 	path = .vim/bundle/vim-sleuth
 	url = https://github.com/rogerhub/vim-sleuth.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/ctrp"]
 	path = .vim/bundle/ctrp
 	url = https://github.com/kien/ctrlp.vim.git
@@ -37,12 +25,3 @@
 [submodule ".vim/bundle/vim-better-whitespace"]
 	path = .vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule ".vim/bundle/emmet-vim"]
-	path = .vim/bundle/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
-[submodule ".vim/bundle/puppet-syntax-vim"]
-	path = .vim/bundle/puppet-syntax-vim
-	url = https://github.com/rogerhub/puppet-syntax-vim.git
-[submodule ".vim/bundle/vim-handlebars"]
-	path = .vim/bundle/vim-handlebars
-	url = https://github.com/nono/vim-handlebars.git
