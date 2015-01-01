@@ -34,6 +34,8 @@ set gdefault
 " Set number of colors to 256
 set t_Co=256
 
+highlight ExtraWhitespace ctermbg = blue
+
 " tinymode.vim
 nmap , :set timeoutlen=86400000<CR><SID>ldr
 vmap , :set timeoutlen=86400000<CR><SID>ldr
@@ -182,7 +184,7 @@ autocmd BufNewFile,BufRead *.hn set filetype=horn
 " Support for CPPCMS tmpl
 autocmd BufNewFile,BufRead *.tmpl set filetype=tmpl
 
-autocmd FileType puppet set commentstring=#\ %s
+autocmd FileType puppet,fish set commentstring=#\ %s
 
 " Screw temp files
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
@@ -204,4 +206,3 @@ syntax on
 set background=light
 
 execute pathogen#infect()
-
