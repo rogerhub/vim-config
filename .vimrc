@@ -171,9 +171,9 @@ set indentexpr=
 set backspace=indent,eol,start
 
 " HTML Indentation
-let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
-let g:html_indent_script1="inc"
-let g:html_indent_style1="inc"
+" let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
+" let g:html_indent_script1="inc"
+" let g:html_indent_style1="inc"
 
 " Support for go
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -183,6 +183,8 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.hn set filetype=horn
 " Support for CPPCMS tmpl
 autocmd BufNewFile,BufRead *.tmpl set filetype=tmpl
+" Support for Laravel Blade
+autocmd BufNewFile,BufRead *.blade.php set filetype=blade
 
 autocmd FileType puppet,fish set commentstring=#\ %s
 
@@ -190,11 +192,6 @@ autocmd FileType puppet,fish set commentstring=#\ %s
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
-
-" Emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<leader>a'
 
 " Make sure words contain dash in CSS, SASS, HTML, etc
 autocmd FileType html,css,sass,javascript set iskeyword+=-
