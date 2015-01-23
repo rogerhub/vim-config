@@ -6,8 +6,8 @@ if $SHELL =~ 'bin/fish'
 endif
 
 " Vim sleuth
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
 set incsearch
@@ -30,6 +30,7 @@ set novb
 set ignorecase
 set nosmartcase
 set gdefault
+set hlsearch
 
 " Set number of colors to 256
 set t_Co=256
@@ -90,16 +91,12 @@ cabbrev X x
 cabbrev Set set
 
 " Hacks
-map . <Nop>
+" map . <Nop>
 map K <Nop>
 map Q <Nop>
 map q: <Nop>
 map q/ <Nop>
 map q? <Nop>
-nnoremap m d
-vnoremap m d
-nnoremap M D
-vnoremap M D
 nnoremap c "_c
 vnoremap c "_c
 nnoremap C "_C
@@ -109,11 +106,12 @@ vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
 nnoremap ; :
+nnoremap ' ;
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-cmap w!! %!sudo tee > /dev/null %
+nnoremap <Space> :noh<CR>
 
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$','\.class$']
@@ -142,7 +140,7 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=b
 set guioptions+=c
-set guifont=Ubuntu\ Mono\ 13,Menlo\ Regular:h14
+set guifont=Ubuntu\ Mono\ 13,Menlo\ Regular:h12
 
 " PageUp and PageDown Behavior
 nnoremap <silent> <PageUp> <C-U>

@@ -1,4 +1,4 @@
-set lines=47 columns=179
+set lines=56 columns=205
 colorscheme summerfruit256
 set vb
 set t_vb=
