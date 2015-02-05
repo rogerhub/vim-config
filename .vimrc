@@ -44,8 +44,8 @@ nn <script> <SID>ldr, <SID>ldr
 vn <script> <SID>ldr, <SID>ldr
 nn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
 vn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
-nn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
-vn <script> <SID>ldr2 :NERDTree<CR><SID>ldr
+nn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
+vn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
 nn <script> <SID>ldr0 :Text<CR><SID>ldr
 vn <script> <SID>ldr0 :Text<CR><SID>ldr
 nn <script> <SID>ldrL :set list!<CR><SID>ldr
@@ -81,6 +81,7 @@ vmap <SID>ldr :set timeoutlen=1000<CR>
 
 " Commands
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
+command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 command W w
 cabbrev man help
 cabbrev mc MultipleCursorsFind
@@ -107,6 +108,7 @@ nnoremap D "_D
 vnoremap D "_D
 nnoremap ; :
 nnoremap ' ;
+vnoremap ' ;
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -114,7 +116,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <Space> :noh<CR>
 
 " NERDTree
-let NERDTreeIgnore = ['\.pyc$','\.class$']
+let NERDTreeIgnore = ['\.pyc$','\.class$','\.o$']
 
 " CTRL P
 let g:ctrlp_working_path_mode = 'raw'
