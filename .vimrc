@@ -22,7 +22,11 @@ set wildmode=longest:list,full
 set wildmenu
 set wrap
 set lbr
-set showbreak=...
+set showbreak=...\ 
+if exists("&breakindent")
+  " oh my god fuck yes
+  set breakindent
+endif
 set synmaxcol=0
 set tags=./tags,tags;/
 set noeb
@@ -163,12 +167,18 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+" Select just pasted text
+nnoremap gp `[v`]
+
 " Eh?
 set modelines=0
 set autoindent
-set smartindent
+set cindent
 set indentexpr=
 set backspace=indent,eol,start
+
+set cinkeys-=0#
+set indentkeys-=0#
 
 " HTML Indentation
 " let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
@@ -192,6 +202,8 @@ autocmd FileType puppet,fish set commentstring=#\ %s
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
+
+autocmd BufRead,BufNewFile,BufEnter config.fish set filetype=fish
 
 " Make sure words contain dash in CSS, SASS, HTML, etc
 autocmd FileType html,css,sass,javascript set iskeyword+=-
