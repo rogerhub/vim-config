@@ -195,6 +195,8 @@ autocmd BufNewFile,BufRead *.hn set filetype=horn
 autocmd BufNewFile,BufRead *.tmpl set filetype=tmpl
 " Support for Laravel Blade
 autocmd BufNewFile,BufRead *.blade.php set filetype=blade
+" Support for tex (what's plaintex?)
+autocmd BufNewFile,BufRead *.tex set filetype=tex
 
 autocmd FileType puppet,fish set commentstring=#\ %s
 
