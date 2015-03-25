@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/puppet-syntax-vim"]
 	path = .vim/bundle/puppet-syntax-vim
 	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule ".vim/bundle/vim-abolish"]
+	path = .vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish

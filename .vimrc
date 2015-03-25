@@ -11,7 +11,8 @@ set tabstop=4
 set expandtab
 
 set incsearch
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:\ 
+set nolist
 set nonumber
 set ruler
 set scrolloff=0
