@@ -112,6 +112,7 @@ vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
 nnoremap ; :
+vnoremap ; :
 nnoremap ' ;
 vnoremap ' ;
 nnoremap <C-J> <C-W><C-J>
@@ -189,7 +190,7 @@ set indentkeys-=0#
 " Support for go
 autocmd BufNewFile,BufRead *.go set filetype=go
 " Support for markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.md set filetype=ghmarkdown
 " Support for horn
 autocmd BufNewFile,BufRead *.hn set filetype=horn
 " Support for CPPCMS tmpl
@@ -198,8 +199,11 @@ autocmd BufNewFile,BufRead *.tmpl set filetype=tmpl
 autocmd BufNewFile,BufRead *.blade.php set filetype=blade
 " Support for tex (what's plaintex?)
 autocmd BufNewFile,BufRead *.tex set filetype=tex
+" Julia
+autocmd BufNewFile,BufRead *.jl set filetype=julia
 
-autocmd FileType puppet,fish set commentstring=#\ %s
+
+autocmd FileType puppet,fish,julia set commentstring=#\ %s
 
 " Screw temp files
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
