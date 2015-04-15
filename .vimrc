@@ -98,7 +98,7 @@ cabbrev Set set
 
 " Hacks
 " map . <Nop>
-map K <Nop>
+map K <Plug>(Man)
 map Q <Nop>
 map q: <Nop>
 map q/ <Nop>
@@ -129,7 +129,7 @@ let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_root_markers = ['.projroot']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|bundle)$',
-  \ 'file': '\v\.(exe|so|dll|class|pyc)$',
+  \ 'file': '\v\.(exe|so|dll|class|pyc|aux|log|result|output|pdf)$',
   \ }
 let g:ctrlp_cmd = 'CtrlP'
 " Disable ctrlp switch buffer
@@ -149,6 +149,7 @@ set guioptions-=L
 set guioptions-=b
 set guioptions+=c
 set guifont=Ubuntu\ Mono\ 13,Menlo\ Regular:h12
+set linespace=1
 
 " PageUp and PageDown Behavior
 nnoremap <silent> <PageUp> <C-U>
