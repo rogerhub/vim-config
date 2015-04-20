@@ -55,6 +55,7 @@ nn <script> <SID>ldr0 :Text<CR><SID>ldr
 vn <script> <SID>ldr0 :Text<CR><SID>ldr
 nn <script> <SID>ldrL :set list!<CR><SID>ldr
 vn <script> <SID>ldrL :set list!<CR><SID>ldr
+nn <script> <SID>ldre :set timeoutlen=1000<CR>0f{"syi{o<ESC>C\end{<ESC>"spA}<ESC>O
 nn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
 vn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
 nn <script> <SID>ldrq :q<CR><SID>ldr
@@ -122,7 +123,20 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <Space> :noh<CR>
 
 " NERDTree
-let NERDTreeIgnore = ['\.pyc$','\.class$','\.o$']
+let NERDTreeIgnore = [
+  \ '\.pyc$',
+  \ '\.class$',
+  \ '\.o$',
+  \ '\.exe$',
+  \ '\.so$',
+  \ '\.dll$',
+  \ '\.aux$',
+  \ '\.log$',
+  \ '\.result$',
+  \ '\.output$',
+  \ '\.pdf$'
+  \ ]
+let NERDTreeMinimalUI = 1
 
 " CTRL P
 let g:ctrlp_working_path_mode = 'raw'
