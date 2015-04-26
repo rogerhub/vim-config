@@ -55,6 +55,8 @@ nn <script> <SID>ldr0 :Text<CR><SID>ldr
 vn <script> <SID>ldr0 :Text<CR><SID>ldr
 nn <script> <SID>ldrL :set list!<CR><SID>ldr
 vn <script> <SID>ldrL :set list!<CR><SID>ldr
+nn <script> <SID>ldrp "+p:set timeoutlen=1000<CR>
+vn <script> <SID>ldrp "+p:set timeoutlen=1000<CR>
 nn <script> <SID>ldre :set timeoutlen=1000<CR>0f{"syi{o<ESC>C\end{<ESC>"spA}<ESC>O
 nn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
 vn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
@@ -84,6 +86,9 @@ nn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
 vn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
 nmap <SID>ldr :set timeoutlen=1000<CR>
 vmap <SID>ldr :set timeoutlen=1000<CR>
+
+nn <script> <leader>y "+y
+vn <script> <leader>y "+y
 
 " Commands
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
