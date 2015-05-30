@@ -129,7 +129,14 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <Space> :redraw<CR>:noh<CR>
 
 " Explorer mode
-nnoremap ` :Explore<CR>
+function! NetrwToggle()
+  if exists("w:netrw_rexlocal")
+    Rexplore
+  else
+    Explore
+  endif
+endfunction
+nnoremap ` :call NetrwToggle()<CR>
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 let g:netrw_sort_sequence = '[\/]$,*,\%(' . join(map(split(&suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$'
@@ -161,6 +168,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_cmd = 'CtrlP'
 " Disable ctrlp switch buffer
 let g:ctrlp_switch_buffer = ''
+let g:ctrlp_max_files = 100000
 
 " Mouse
 set mousehide
