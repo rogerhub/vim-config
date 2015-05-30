@@ -23,7 +23,7 @@ set wildmode=longest:list,full
 set wildmenu
 set wrap
 set lbr
-set showbreak=...\ 
+set showbreak=\:\:\:
 if exists("&breakindent")
   " oh my god fuck yes
   set breakindent
@@ -36,6 +36,7 @@ set ignorecase
 set nosmartcase
 set gdefault
 set hlsearch
+set virtualedit=onemore
 
 " Set number of colors to 256
 set t_Co=256
@@ -49,8 +50,8 @@ nn <script> <SID>ldr, <SID>ldr
 vn <script> <SID>ldr, <SID>ldr
 nn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
 vn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
-nn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
-vn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
+" nn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
+" vn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
 nn <script> <SID>ldr0 :Text<CR><SID>ldr
 vn <script> <SID>ldr0 :Text<CR><SID>ldr
 nn <script> <SID>ldrL :set list!<CR><SID>ldr
@@ -125,23 +126,30 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <Space> :noh<CR>
+nnoremap <Space> :redraw<CR>:noh<CR>
+
+" Explorer mode
+nnoremap ` :Explore<CR>
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_sort_sequence = '[\/]$,*,\%(' . join(map(split(&suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$'
+let g:netrw_mousemaps = 0
 
 " NERDTree
-let NERDTreeIgnore = [
-  \ '\.pyc$',
-  \ '\.class$',
-  \ '\.o$',
-  \ '\.exe$',
-  \ '\.so$',
-  \ '\.dll$',
-  \ '\.aux$',
-  \ '\.log$',
-  \ '\.result$',
-  \ '\.output$',
-  \ '\.pdf$'
-  \ ]
-let NERDTreeMinimalUI = 1
+" let NERDTreeIgnore = [
+"   \ '\.pyc$',
+"   \ '\.class$',
+"   \ '\.o$',
+"   \ '\.exe$',
+"   \ '\.so$',
+"   \ '\.dll$',
+"   \ '\.aux$',
+"   \ '\.log$',
+"   \ '\.result$',
+"   \ '\.output$',
+"   \ '\.pdf$'
+"   \ ]
+" let NERDTreeMinimalUI = 1
 
 " CTRL P
 let g:ctrlp_working_path_mode = 'raw'
