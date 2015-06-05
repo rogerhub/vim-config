@@ -137,6 +137,7 @@ function! NetrwToggle()
   endif
 endfunction
 nnoremap ` :call NetrwToggle()<CR>
+nnoremap - :Explore<CR>
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 let g:netrw_sort_sequence = '[\/]$,*,\%(' . join(map(split(&suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$'
@@ -222,6 +223,9 @@ set indentkeys-=0#
 " let g:html_indent_inctags="head,html,body,p,head,table,tbody,div,script"
 " let g:html_indent_script1="inc"
 " let g:html_indent_style1="inc"
+
+" I don't write or edit scripts for /bin/sh...
+let g:is_bash=1
 
 " Support for go
 autocmd BufNewFile,BufRead *.go set filetype=go
