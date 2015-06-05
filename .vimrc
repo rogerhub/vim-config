@@ -140,7 +140,7 @@ nnoremap ` :call NetrwToggle()<CR>
 nnoremap - :Explore<CR>
 let g:netrw_liststyle=3
 let g:netrw_banner=0
-let g:netrw_sort_sequence = '[\/]$,*,\%(' . join(map(split(&suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$'
+let g:netrw_sort_sequence = ''
 let g:netrw_mousemaps = 0
 
 " NERDTree
@@ -184,7 +184,7 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=b
 set guioptions+=c
-set guifont=Ubuntu\ Mono\ 13,Menlo\ Regular:h11
+set guifont=Ubuntu\ Mono\ 13,Menlo\ Regular:h12
 set linespace=0
 
 " PageUp and PageDown Behavior
