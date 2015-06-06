@@ -162,14 +162,33 @@ let g:netrw_mousemaps = 0
 " CTRL P
 let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_root_markers = ['.projroot']
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|bundle)$',
-  \ 'file': '\v\.(exe|so|dll|class|pyc|aux|log|result|output|pdf)$',
-  \ }
+let g:ctrlp_custom_ignore = {}
 let g:ctrlp_cmd = 'CtrlP'
 " Disable ctrlp switch buffer
 let g:ctrlp_switch_buffer = ''
-let g:ctrlp_max_files = 100000
+let g:ctrlp_max_files = 0
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+if executable("ag")
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore "**/.git"
+        \ --ignore "**/.svn/"
+        \ --ignore "**/.hg/"
+        \ --ignore "**/.bundle/"
+        \ --ignore "**/.DS_Store"
+        \ --ignore "**/*.pyc"
+        \ --ignore "**/*.exe"
+        \ --ignore "**/*.so"
+        \ --ignore "**/*.dll"
+        \ --ignore "**/*.class"
+        \ --ignore "**/*.aux"
+        \ --ignore "**/*.log"
+        \ --ignore "**/*.result"
+        \ --ignore "**/*.output"
+        \ --ignore "**/*.pdf"
+        \ -g ""'
+endif
 
 " Mouse
 set mousehide

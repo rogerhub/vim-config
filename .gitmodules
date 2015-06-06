@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/vim-man"]
 	path = .vim/bundle/vim-man
 	url = https://github.com/bruno-/vim-man.git
+[submodule ".vim/bundle/ctrlp-py-matcher"]
+	path = .vim/bundle/ctrlp-py-matcher
+	url = https://github.com/FelikZ/ctrlp-py-matcher.git
