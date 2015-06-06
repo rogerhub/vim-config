@@ -168,15 +168,16 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_switch_buffer = ''
 let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
 
 if executable("ag")
   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-        \ --ignore "**/.git"
-        \ --ignore "**/.svn/"
-        \ --ignore "**/.hg/"
-        \ --ignore "**/.bundle/"
-        \ --ignore "**/.DS_Store"
+        \ --ignore ".git"
+        \ --ignore ".svn"
+        \ --ignore ".hg"
+        \ --ignore ".bundle"
+        \ --ignore ".DS_Store"
         \ --ignore "**/*.pyc"
         \ --ignore "**/*.exe"
         \ --ignore "**/*.so"
