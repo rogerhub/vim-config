@@ -128,20 +128,47 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <Space> :redraw<CR>:noh<CR>
 
-" Explorer mode
-function! NetrwToggle()
-  if exists("w:netrw_rexlocal")
-    Rexplore
-  else
-    Explore
+" Taken from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
+let s:netrw_up = ''
+autocmd FileType netrw call s:setup_vinegar()
+function! s:setup_vinegar() abort
+  if empty(s:netrw_up)
+    " save netrw mapping
+    let s:netrw_up = maparg('-', 'n')
+    " saved string is like this:
+    " :exe "norm! 0"|call netrw#LocalBrowseCheck(<SNR>172_NetrwBrowseChgDir(1,'../'))<CR>
+    " remove <CR> at the end (otherwise raises "E488: Trailing characters")
+    let s:netrw_up = strpart(s:netrw_up, 0, strlen(s:netrw_up)-4)
   endif
 endfunction
-nnoremap ` :call NetrwToggle()<CR>
-nnoremap - :Explore<CR>
-let g:netrw_liststyle=3
-let g:netrw_banner=0
+
+function! s:seek(file)
+  let pattern = '^\%(| \)*'.escape(a:file, '.*[]~\').'[/*|@=]\=\%($\|\t\)'
+  call search(pattern, 'wc')
+  return pattern
+endfunction
+
+function! s:opendir(cmd)
+  if &filetype ==# 'netrw'
+    let currdir = fnamemodify(b:netrw_curdir, ':t')
+    execute s:netrw_up
+    call s:seek(currdir)
+  else
+    if empty(expand('%'))
+      execute a:cmd '.'
+    else
+      execute a:cmd '%:h/'
+      call s:seek(expand('#:t'))
+    endif
+  endif
+endfunction
+
+nnoremap ` :call <SID>opendir('edit')<CR>
+let g:netrw_liststyle = 0
+let g:netrw_banner = 0
 let g:netrw_sort_sequence = ''
 let g:netrw_mousemaps = 0
+let g:netrw_list_hide = '^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)$'
 
 " NERDTree
 " let NERDTreeIgnore = [
