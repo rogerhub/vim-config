@@ -22,7 +22,7 @@ set tabpagemax=50
 set wildmode=longest:list,full
 set wildmenu
 set wrap
-set lbr
+set linebreak
 set showbreak=\:\:\:
 if exists("&breakindent")
   " oh my god fuck yes
@@ -30,8 +30,8 @@ if exists("&breakindent")
 endif
 set synmaxcol=0
 set tags=./tags,tags;/
-set noeb
-set novb
+set noerrorbells
+set novisualbell
 set ignorecase
 set nosmartcase
 set gdefault
@@ -45,54 +45,34 @@ highlight ExtraWhitespace ctermbg = blue
 
 " tinymode.vim
 nmap , :set timeoutlen=86400000<CR><SID>ldr
-vmap , :set timeoutlen=86400000<CR><SID>ldr
+vmap , <ESC>:set timeoutlen=86400000<CR><SID>ldr
 nn <script> <SID>ldr, <SID>ldr
-vn <script> <SID>ldr, <SID>ldr
 nn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
-vn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
-" nn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
-" vn <script> <SID>ldr2 :NERDTreeToggle<CR><SID>ldr
 nn <script> <SID>ldr0 :Text<CR><SID>ldr
-vn <script> <SID>ldr0 :Text<CR><SID>ldr
 nn <script> <SID>ldrL :set list!<CR><SID>ldr
-vn <script> <SID>ldrL :set list!<CR><SID>ldr
 nn <script> <SID>ldrp "+p:set timeoutlen=1000<CR>
-vn <script> <SID>ldrp "+p:set timeoutlen=1000<CR>
 nn <script> <SID>ldre :set timeoutlen=1000<CR>0f{"syi{o<ESC>C\end{<ESC>"spA}<ESC>O
 nn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
-vn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
 nn <script> <SID>ldrq :q<CR><SID>ldr
-vn <script> <SID>ldrq :q<CR><SID>ldr
 nn <script> <SID>ldrw :set timeoutlen=1000<CR>:w<CR>
-vn <script> <SID>ldrw :set timeoutlen=1000<CR>:w<CR>
 nn <script> <SID>ldrv :vsp<CR><SID>ldr
-vn <script> <SID>ldrv :vsp<CR><SID>ldr
 nn <script> <SID>ldrs :sp<CR><SID>ldr
-vn <script> <SID>ldrs :sp<CR><SID>ldr
 nn <script> <SID>ldrt :tabnew<CR><SID>ldr
-vn <script> <SID>ldrt :tabnew<CR><SID>ldr
 nn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
-vn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
 nn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
-vn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
 nn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
-vn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
 nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
-vn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
-vn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
 nn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
-vn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
 nn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
-vn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
 nmap <SID>ldr :set timeoutlen=1000<CR>
-vmap <SID>ldr :set timeoutlen=1000<CR>
 
 nn <script> <leader>y "+y
 vn <script> <leader>y "+y
 
 " Commands
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
+command NoText set cc=0 tw=0 nospell
 command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 command W w
 cabbrev man help
@@ -104,7 +84,8 @@ cabbrev X x
 cabbrev Set set
 
 " Hacks
-" map . <Nop>
+map . <Nop>
+nnoremap ~ .
 map K <Plug>(Man)
 map Q <Nop>
 map q: <Nop>
@@ -122,10 +103,14 @@ nnoremap ; :
 vnoremap ; :
 nnoremap ' ;
 vnoremap ' ;
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+nnoremap ∆ <C-W><S-J>
+nnoremap ˚ <C-W><S-K>
+nnoremap ˙ <C-W><S-H>
+nnoremap ¬ <C-W><S-L>
 nnoremap <Space> :redraw<CR>:noh<CR>
 
 " Taken from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
@@ -259,7 +244,6 @@ nnoremap gp `[v`]
 " Eh?
 set modelines=0
 set autoindent
-set cindent
 set indentexpr=
 set backspace=indent,eol,start
 
@@ -273,6 +257,9 @@ set indentkeys-=0#
 
 " I don't write or edit scripts for /bin/sh...
 let g:is_bash=1
+
+set nocindent
+autocmd FileType c,cpp set cindent
 
 " Support for go
 autocmd BufNewFile,BufRead *.go set filetype=go

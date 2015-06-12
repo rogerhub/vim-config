@@ -77,6 +77,15 @@ syn region markdownCode matchgroup=markdownCodeDelimiter start="`` \=" end=" \=`
 syn region markdownGHCodeBlock matchgroup=markdownCodeDelimiter start="^\s*$\n\s*```\s\?\S*\s*$" end="\s*```$\n\s*\n" contained  keepend
 
 syn match markdownEscape "\\[][\\`*_{}()#+.!-]"
+syn match keywordDone "\c\[done\]"
+syn match keywordOk "\c\[ok\]"
+syn match keywordNb "\c\[nb\]"
+syn match keywordWarn "\c\[warn\]"
+syn match keywordAttn "\c\[attn\]"
+syn match keywordTodo "\c\[todo\]"
+syn match keywordBlank "\c\[  \]"
+syn match keywordQQ "\c\[??\]"
+syn match keywordQuestion "\c\[question\]"
 
 " Copying rst's method of using literal strings
 hi def link markdownGHCodeBlock           String
@@ -111,6 +120,15 @@ hi def link markdownBoldItalic            htmlBoldItalic
 hi def link markdownCodeDelimiter         Delimiter
 
 hi def link markdownEscape                Special
+hi def link keywordDone                   keywordGreen
+hi def link keywordOk                     keywordGreen
+hi def link keywordNb                     keywordYellow
+hi def link keywordWarn                   keywordYellow
+hi def link keywordAttn                   keywordRed
+hi def link keywordTodo                   keywordRed
+hi def link keywordBlank                  keywordRed
+hi def link keywordQQ                     keywordPurple
+hi def link keywordQuestion               keywordPurple
 
 let b:current_syntax = "ghmarkdown"
 

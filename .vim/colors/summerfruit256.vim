@@ -306,6 +306,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("jinjaSpecial", "008ffd", "fbf4c7", "")
 
     call <SID>X("ExtraWhitespace", "ffffff", "ff0000", "")
+    call <SID>X("keywordGreen", "009900", "ddffdd", "")
+    call <SID>X("keywordYellow", "666600", "ffffaa", "")
+    call <SID>X("keywordRed", "cc0000", "ffdddd", "")
+    call <SID>X("keywordPurple", "880088", "ffddff", "")
 
     " delete functions {{{
     delf <SID>X
