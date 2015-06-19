@@ -1,4 +1,4 @@
-colorscheme summerfruit256
+colorscheme codeschool
 set vb
 set t_vb=
 

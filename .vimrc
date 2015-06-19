@@ -59,12 +59,12 @@ nn <script> <SID>ldrv :vsp<CR><SID>ldr
 nn <script> <SID>ldrs :sp<CR><SID>ldr
 nn <script> <SID>ldrt :tabnew<CR><SID>ldr
 nn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
+nn <script> <SID>ldrr :set timeoutlen=1000<CR>:CtrlPMRU<CR>
 nn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
 nn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
 nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
 nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
 nn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
-nn <script> <SID>ldrM :set timeoutlen=1000<CR>:CtrlPMixed<CR>
 nmap <SID>ldr :set timeoutlen=1000<CR>
 
 nn <script> <leader>y "+y
@@ -276,8 +276,12 @@ autocmd BufNewFile,BufRead *.tex set filetype=tex
 " Julia
 autocmd BufNewFile,BufRead *.jl set filetype=julia
 
-
+" Auto comment format
 autocmd FileType puppet,fish,julia set commentstring=#\ %s
+
+" Don't ask me to save things read from stdin
+autocmd StdinReadPost * set nomodified
+autocmd StdinReadPre * set filetype= nowrap
 
 " Screw temp files
 silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
