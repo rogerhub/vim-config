@@ -124,8 +124,8 @@ hi def link keywordDone                   keywordGreen
 hi def link keywordOk                     keywordGreen
 hi def link keywordNb                     keywordYellow
 hi def link keywordWarn                   keywordYellow
-hi def link keywordAttn                   keywordRed
-hi def link keywordTodo                   keywordRed
+hi def link keywordTodo                   keywordYellow
+hi def link keywordAttn                   keywordYellow
 hi def link keywordBlank                  keywordRed
 hi def link keywordQQ                     keywordPurple
 hi def link keywordQuestion               keywordPurple

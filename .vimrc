@@ -37,6 +37,8 @@ set nosmartcase
 set gdefault
 set hlsearch
 set virtualedit=onemore
+set complete=.,w,b,u,i
+set fillchars=vert:\ ,fold:-
 
 " Set number of colors to 256
 set t_Co=256
@@ -73,6 +75,9 @@ vn <script> <leader>y "+y
 " Commands
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
 command NoText set cc=0 tw=0 nospell
+command JsonPP %!python -m json.tool
+command XmlPP %!xmllint --format -
+command HtmlPP %!tidy
 command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 command W w
 cabbrev man help

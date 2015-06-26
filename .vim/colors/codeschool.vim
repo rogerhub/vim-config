@@ -112,7 +112,7 @@ hi cssBraces guifg=NONE guibg=NONE gui=NONE
 hi ExtraWhitespace  guifg=#000000   guibg=#006688   gui=none
 hi keywordGreen     guifg=#88ff88   guibg=#446600   gui=none
 hi keywordYellow    guifg=#ffff88   guibg=#444400   gui=none
-hi keywordRed       guifg=#aa0000                   gui=bold
-hi keywordPurple    guifg=#ffddff   guibg=#880088   gui=none
-hi multiple_cursors_cursor gui=reverse
-hi! link multiple_cursors_visual Search
+hi keywordRed       guifg=#ff2222                   gui=bold
+hi keywordPurple    guifg=#ffccbb   guibg=#770066   gui=none
+hi! link multiple_cursors_cursor cursor
+hi! multiple_cursors_visual guifg=#ffffff guibg=#007733 gui=bold
