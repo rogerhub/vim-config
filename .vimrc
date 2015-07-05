@@ -158,7 +158,7 @@ let g:netrw_liststyle = 0
 let g:netrw_banner = 0
 let g:netrw_sort_sequence = ''
 let g:netrw_mousemaps = 0
-let g:netrw_list_hide = '^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)$'
+let g:netrw_list_hide = '\(^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)\|\.pyc\)$'
 
 " NERDTree
 " let NERDTreeIgnore = [
@@ -195,16 +195,16 @@ if executable("ag")
         \ --ignore ".hg"
         \ --ignore ".bundle"
         \ --ignore ".DS_Store"
-        \ --ignore "**/*.pyc"
-        \ --ignore "**/*.exe"
-        \ --ignore "**/*.so"
-        \ --ignore "**/*.dll"
-        \ --ignore "**/*.class"
-        \ --ignore "**/*.aux"
-        \ --ignore "**/*.log"
-        \ --ignore "**/*.result"
-        \ --ignore "**/*.output"
-        \ --ignore "**/*.pdf"
+        \ --ignore "*.pyc"
+        \ --ignore "*.exe"
+        \ --ignore "*.so"
+        \ --ignore "*.dll"
+        \ --ignore "*.class"
+        \ --ignore "*.aux"
+        \ --ignore "*.log"
+        \ --ignore "*.result"
+        \ --ignore "*.output"
+        \ --ignore "*.pdf"
         \ -g ""'
 endif
 
