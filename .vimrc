@@ -15,6 +15,7 @@ set listchars=tab:▸\ ,eol:\
 set nolist
 set nonumber
 set ruler
+set rulerformat=%=%l,%c
 set scrolloff=0
 set showcmd
 set noshowmode
@@ -45,32 +46,33 @@ set t_Co=256
 
 highlight ExtraWhitespace ctermbg = blue
 
-" tinymode.vim
-nmap , :set timeoutlen=86400000<CR><SID>ldr
-vmap , <ESC>:set timeoutlen=86400000<CR><SID>ldr
-nn <script> <SID>ldr, <SID>ldr
-nn <script> <SID>ldr1 :set wrap!<CR><SID>ldr
-nn <script> <SID>ldr0 :Text<CR><SID>ldr
-nn <script> <SID>ldrL :set list!<CR><SID>ldr
-nn <script> <SID>ldrp "+p:set timeoutlen=1000<CR>
-nn <script> <SID>ldre :set timeoutlen=1000<CR>0f{"syi{o<ESC>C\end{<ESC>"spA}<ESC>O
-nn <script> <SID>ldrx :set timeoutlen=1000<CR>:x<CR>
-nn <script> <SID>ldrq :q<CR><SID>ldr
-nn <script> <SID>ldrw :set timeoutlen=1000<CR>:w<CR>
-nn <script> <SID>ldrv :vsp<CR><SID>ldr
-nn <script> <SID>ldrs :sp<CR><SID>ldr
-nn <script> <SID>ldrt :tabnew<CR><SID>ldr
-nn <script> <SID>ldrb :set timeoutlen=1000<CR>:CtrlPBuffer<CR>
-nn <script> <SID>ldrr :set timeoutlen=1000<CR>:CtrlPMRU<CR>
-nn <script> <SID>ldrd :set timeoutlen=1000<CR>:ls<CR>:bd
-nn <script> <SID>ldrc :set timeoutlen=1000<CR>:cd 
-nn <script> <SID>ldrn :set timeoutlen=1000<CR>99<C-W>h
-nn <script> <SID>ldrf :set timeoutlen=1000<CR>:set ft=
-nn <script> <SID>ldrU :set timeoutlen=1000<CR>:set number!<CR>
-nmap <SID>ldr :set timeoutlen=1000<CR>
+" Comma mode
+command CommaMode set timeoutlen=86400000
+command CommaModeCancelled set timeoutlen=1000
+nnoremap <script> , :CommaMode<CR><SID>comma
+nnoremap <script> <SID>comma, :CommaMode<CR><SID>comma
+nnoremap <script> <SID>comma1 :set wrap!<CR><SID>comma
+nnoremap <script> <SID>comma0 :Text<CR><SID>comma
+nnoremap <script> <SID>commaL :set list!<CR><SID>comma
+nnoremap <script> <silent> <SID>commaE :CommaModeCancelled<CR>0f{"syi{o<ESC>C\end{<ESC>"spA}<ESC>O
+nnoremap <script> <SID>commax :CommaModeCancelled<CR>:x<CR>
+nnoremap <script> <SID>commaq :q<CR><SID>comma
+nnoremap <script> <SID>commaw :CommaModeCancelled<CR>:w<CR>
+nnoremap <script> <SID>commav :vsp<CR><SID>comma
+nnoremap <script> <SID>commas :sp<CR><SID>comma
+nnoremap <script> <SID>commat :tabnew<CR><SID>comma
+nnoremap <script> <SID>commab :CommaModeCancelled<CR>:CtrlPBuffer<CR>
+nnoremap <script> <SID>commar :CommaModeCancelled<CR>:CtrlPMRU<CR>
+nnoremap <script> <SID>commad :CommaModeCancelled<CR>:ls<CR>:bd
+nnoremap <script> <SID>commac :CommaModeCancelled<CR>:cd 
+nnoremap <script> <SID>commaf :CommaModeCancelled<CR>:set ft=
+nnoremap <script> <SID>commaU :CommaModeCancelled<CR>:set number!<CR>
+nnoremap <script> <silent> <SID>comma :CommaModeCancelled<CR>
 
-nn <script> <leader>y "+y
-vn <script> <leader>y "+y
+nnoremap <script> <leader>y "+y
+vnoremap <script> <leader>y "+y
+
+nnoremap <C-c> <silent> <C-c>
 
 " Commands
 command Text set sw=2 ts=2 et cc=81 tw=80 spell
@@ -80,13 +82,14 @@ command XmlPP %!xmllint --format -
 command HtmlPP %!tidy
 command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 command W w
-cabbrev man help
-cabbrev mc MultipleCursorsFind
-cabbrev E e
-cabbrev Q q
-cabbrev Qa qa
-cabbrev X x
-cabbrev Set set
+cabbrev man <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'help' : 'man')<CR>
+cabbrev mc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'MultipleCursorsFind' : 'mc')<CR>
+cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e' : 'E')<CR>
+cabbrev Q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'q' : 'Q')<CR>
+cabbrev Qa <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'qa' : 'Qa')<CR>
+cabbrev X <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'x' : 'X')<CR>
+cabbrev Set <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'set' : 'Set')<CR>
+cabbrev W <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'w' : 'W')<CR>
 
 " Hacks
 map . <Nop>
@@ -116,7 +119,7 @@ nnoremap ∆ <C-W><S-J>
 nnoremap ˚ <C-W><S-K>
 nnoremap ˙ <C-W><S-H>
 nnoremap ¬ <C-W><S-L>
-nnoremap <Space> :redraw<CR>:noh<CR>
+nnoremap <silent> <Space> :redraw<CR>:noh<CR>
 
 " Taken from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
 let s:netrw_up = ''
