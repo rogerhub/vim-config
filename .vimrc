@@ -10,6 +10,8 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
+set textwidth=100
+set formatoptions-=t
 set incsearch
 set listchars=tab:▸\ ,eol:\ 
 set nolist
@@ -75,7 +77,7 @@ vnoremap <script> <leader>y "+y
 nnoremap <C-c> <silent> <C-c>
 
 " Commands
-command Text set sw=2 ts=2 et cc=81 tw=80 spell
+command Text set sw=2 ts=2 et cc=101 fo+=t spell
 command NoText set cc=0 tw=0 nospell
 command JsonPP %!python -m json.tool
 command XmlPP %!xmllint --format -
