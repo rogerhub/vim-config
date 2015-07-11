@@ -69,6 +69,7 @@ nnoremap <script> <SID>commad :CommaModeCancelled<CR>:ls<CR>:bd
 nnoremap <script> <SID>commac :CommaModeCancelled<CR>:cd 
 nnoremap <script> <SID>commaf :CommaModeCancelled<CR>:set ft=
 nnoremap <script> <SID>commaU :CommaModeCancelled<CR>:set number!<CR>
+nnoremap <script> <SID>commaT :CommaModeCancelled<CR>:ToggleWhitespace<CR>
 nnoremap <script> <silent> <SID>comma :CommaModeCancelled<CR>
 
 nnoremap <script> <leader>y "+y

@@ -51,7 +51,7 @@ hi NonText guifg=#414e58 guibg=#252c31 gui=NONE
 hi Number guifg=#3c98d9 guibg=NONE gui=NONE
 hi Operator guifg=#dda790 guibg=NONE gui=NONE
 hi PreProc guifg=#dda790 guibg=NONE gui=NONE
-hi Special guifg=#f0f0f0 guibg=NONE gui=NONE
+hi Special guifg=#ffbbff guibg=NONE gui=NONE
 hi SpecialKey guifg=#414e58 guibg=#252c31 gui=NONE
 hi Statement guifg=#dda790 guibg=NONE gui=NONE
 hi StorageClass guifg=#99cf50 guibg=NONE gui=NONE
