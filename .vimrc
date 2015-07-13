@@ -11,7 +11,10 @@ set tabstop=4
 set expandtab
 
 set textwidth=100
-set formatoptions-=t
+" Disable automatic text wrapping within text (t) and comments (c)
+set formatoptions-=t,c
+" Turn on removal of comment leader when joining comment lines
+set formatoptions+=j
 set incsearch
 set listchars=tab:▸\ ,eol:\ 
 set nolist
@@ -122,6 +125,10 @@ nnoremap ∆ <C-W><S-J>
 nnoremap ˚ <C-W><S-K>
 nnoremap ˙ <C-W><S-H>
 nnoremap ¬ <C-W><S-L>
+" OS X: alt+o
+nnoremap ø o<ESC>S
+" OS X: alt+shift+o
+nnoremap Ø O<ESC>S
 nnoremap <silent> <Space> :redraw<CR>:noh<CR>
 
 " Taken from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
@@ -303,6 +310,8 @@ autocmd BufRead,BufNewFile,BufEnter config.fish set filetype=fish
 
 " Make sure words contain dash in CSS, SASS, HTML, etc
 autocmd FileType html,css,sass,javascript set iskeyword+=-
+
+autocmd BufRead,BufNewFile,BufEnter Vagrantfile set filetype=ruby
 
 " Syntax
 filetype plugin indent on
