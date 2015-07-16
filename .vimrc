@@ -12,7 +12,8 @@ set expandtab
 
 set textwidth=100
 " Disable automatic text wrapping within text (t) and comments (c)
-set formatoptions-=t,c
+set formatoptions-=t
+set formatoptions-=c
 " Turn on removal of comment leader when joining comment lines
 set formatoptions+=j
 set incsearch
@@ -81,7 +82,7 @@ vnoremap <script> <leader>y "+y
 nnoremap <C-c> <silent> <C-c>
 
 " Commands
-command Text set sw=2 ts=2 et cc=101 fo+=t spell
+command Text set sw=2 ts=2 et cc=101 fo+=t fo+=c spell
 command NoText set cc=0 tw=0 nospell
 command JsonPP %!python -m json.tool
 command XmlPP %!xmllint --format -
