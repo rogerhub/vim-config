@@ -91,7 +91,7 @@ command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenG
 command W w
 cabbrev man <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'help' : 'man')<CR>
 cabbrev mc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'MultipleCursorsFind' : 'mc')<CR>
-cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e' : 'E')<CR>
+cabbrev E <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e' : 'E')<CR>
 cabbrev Q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'q' : 'Q')<CR>
 cabbrev Qa <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'qa' : 'Qa')<CR>
 cabbrev X <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'x' : 'X')<CR>
