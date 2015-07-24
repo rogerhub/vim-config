@@ -264,6 +264,10 @@ inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>
 inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : ''
 inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'
 
+" These are alt+[ and alt+] on the OS X keyboard
+nmap “ [m
+nmap ‘ ]m
+
 " Select just pasted text
 nnoremap gp `[v`]
 

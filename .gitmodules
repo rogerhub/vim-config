@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/ctrlp-cmatcher"]
 	path = .vim/bundle/ctrlp-cmatcher
 	url = https://github.com/JazzCore/ctrlp-cmatcher.git
+[submodule ".vim/bundle/vim-smooth-scroll"]
+	path = .vim/bundle/vim-smooth-scroll
+	url = https://github.com/terryma/vim-smooth-scroll.git
