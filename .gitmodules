@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/gundo.vim"]
 	path = .vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule ".vim/bundle/vim-misc"]
 	path = .vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git

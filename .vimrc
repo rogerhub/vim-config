@@ -256,8 +256,13 @@ nnoremap <Down> gj
 nnoremap <Up> gk
 vnoremap <Down> gj
 vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
+inoremap <expr> <Down> pumvisible() ? '<C-n>' : '<C-o>gj'
+inoremap <expr> <Up> pumvisible() ? '<C-p>' : '<C-o>gk'
+
+set completeopt=longest,menuone
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : ''
+inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'
 
 " Select just pasted text
 nnoremap gp `[v`]
