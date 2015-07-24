@@ -321,7 +321,7 @@ set directory=~/.vim/swap//
 autocmd BufRead,BufNewFile,BufEnter config.fish set filetype=fish
 
 " Make sure words contain dash in CSS, SASS, HTML, etc
-autocmd FileType html,css,sass,javascript set iskeyword+=-
+autocmd FileType htmldjango,html,css,sass,javascript set iskeyword+=-
 
 autocmd BufRead,BufNewFile,BufEnter Vagrantfile set filetype=ruby
 
