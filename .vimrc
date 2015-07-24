@@ -260,9 +260,9 @@ inoremap <expr> <Down> pumvisible() ? '<C-n>' : '<C-o>gj'
 inoremap <expr> <Up> pumvisible() ? '<C-p>' : '<C-o>gk'
 
 set completeopt=longest,menuone
-inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <S-Tab> pumvisible() ? '<C-p>' : ''
-inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'
+inoremap <expr><silent> <Tab> pumvisible() ? '<C-n>' : col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w' ? '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>' : '<Tab>'
+inoremap <expr><silent> <S-Tab> pumvisible() ? '<C-p>' : ''
+inoremap <expr><silent> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'
 
 " These are alt+[ and alt+] on the OS X keyboard
 nmap “ [m
