@@ -14,6 +14,8 @@ set textwidth=100
 " Disable automatic text wrapping within text (t) and comments (c)
 set formatoptions-=t
 set formatoptions-=c
+" Turn on insertion of comment leader when pressing <Enter> in insert mode
+set formatoptions+=r
 " Turn on removal of comment leader when joining comment lines
 set formatoptions+=j
 set incsearch
