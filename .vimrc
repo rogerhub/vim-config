@@ -103,7 +103,6 @@ cabbrev W <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'w' : 'W')<CR>
 " Hacks
 map . <Nop>
 nnoremap ~ .
-map K <Plug>(Man)
 map Q <Nop>
 map q: <Nop>
 map q/ <Nop>
