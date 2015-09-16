@@ -32,7 +32,7 @@ set wildmode=longest:list,full
 set wildmenu
 set wrap
 set linebreak
-set showbreak=\:\:\:
+set showbreak=···
 if exists("&breakindent")
   " oh my god fuck yes
   set breakindent
@@ -275,6 +275,7 @@ set modelines=0
 set autoindent
 set indentexpr=
 set backspace=indent,eol,start
+set cinoptions=l1
 
 set cinkeys-=0#
 set indentkeys-=0#
