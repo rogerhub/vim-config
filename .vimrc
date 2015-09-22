@@ -30,7 +30,7 @@ set noshowmode
 set tabpagemax=50
 set wildmode=longest:list,full
 set wildmenu
-set wrap
+set nowrap
 set linebreak
 set showbreak=···
 if exists("&breakindent")
@@ -76,6 +76,7 @@ nnoremap <script> <SID>commac :CommaModeCancelled<CR>:cd
 nnoremap <script> <SID>commaf :CommaModeCancelled<CR>:set ft=
 nnoremap <script> <SID>commaU :CommaModeCancelled<CR>:set number!<CR>
 nnoremap <script> <SID>commaT :CommaModeCancelled<CR>:ToggleWhitespace<CR>
+nnoremap <script> <SID>commaH :CommaModeCancelled<CR>:Cdhere<CR>
 nnoremap <script> <silent> <SID>comma :CommaModeCancelled<CR>
 
 nnoremap <script> <leader>y "+y
@@ -91,6 +92,7 @@ command XmlPP %!xmllint --format -
 command HtmlPP %!tidy
 command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 command W w
+command Cdhere cd %:p:h
 cabbrev man <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'help' : 'man')<CR>
 cabbrev mc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'MultipleCursorsFind' : 'mc')<CR>
 cabbrev E <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e' : 'E')<CR>
