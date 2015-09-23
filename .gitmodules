@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-smooth-scroll"]
 	path = .vim/bundle/vim-smooth-scroll
 	url = https://github.com/terryma/vim-smooth-scroll.git
+[submodule ".vim/bundle/vim-visualstar"]
+	path = .vim/bundle/vim-visualstar
+	url = https://github.com/thinca/vim-visualstar.git
