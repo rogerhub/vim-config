@@ -76,7 +76,7 @@ nnoremap <script> <SID>commac :CommaModeCancelled<CR>:cd
 nnoremap <script> <SID>commaf :CommaModeCancelled<CR>:set ft=
 nnoremap <script> <SID>commaU :CommaModeCancelled<CR>:set number!<CR>
 nnoremap <script> <SID>commaT :CommaModeCancelled<CR>:ToggleWhitespace<CR>
-nnoremap <script> <SID>commaH :CommaModeCancelled<CR>:Cdhere<CR>
+nnoremap <script> <SID>commaH :CommaModeCancelled<CR>:Rooter<CR>
 nnoremap <script> <silent> <SID>comma :CommaModeCancelled<CR>
 
 nnoremap <script> <leader>y "+y
@@ -92,7 +92,6 @@ command XmlPP %!xmllint --format -
 command HtmlPP %!tidy
 command Ctags set tags+=/usr/include/tags tags+=/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers/tags
 command W w
-command Cdhere cd %:p:h
 cabbrev man <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'help' : 'man')<CR>
 cabbrev mc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'MultipleCursorsFind' : 'mc')<CR>
 cabbrev E <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e' : 'E')<CR>
@@ -194,6 +193,10 @@ let g:netrw_list_hide = '\(^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)
 " let NERDTreeMinimalUI = 1
 
 let g:multi_cursor_exit_from_insert_mode = 0
+
+" vim-rooter
+let g:rooter_disable_map = 1
+let g:rooter_manual_only = 1
 
 " CTRL P
 let g:ctrlp_working_path_mode = 'raw'
