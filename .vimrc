@@ -193,6 +193,8 @@ let g:netrw_list_hide = '\(^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)
 "   \ ]
 " let NERDTreeMinimalUI = 1
 
+let g:multi_cursor_exit_from_insert_mode = 0
+
 " CTRL P
 let g:ctrlp_working_path_mode = 'raw'
 let g:ctrlp_root_markers = ['.projroot']
