@@ -55,7 +55,7 @@ set t_Co=256
 highlight ExtraWhitespace ctermbg = blue
 
 " Comma mode
-command CommaMode set timeoutlen=86400000
+command CommaMode set timeoutlen=31415926
 command CommaModeCancelled set timeoutlen=1000
 nnoremap <script> , :CommaMode<CR><SID>comma
 nnoremap <script> <SID>comma, :CommaMode<CR><SID>comma
@@ -302,6 +302,8 @@ autocmd FileType c,cpp set cindent
 autocmd BufNewFile,BufRead *.go set filetype=go
 " Support for markdown
 autocmd BufNewFile,BufRead *.md set filetype=ghmarkdown
+" Support for my notes (so I can read them on my phone too)
+autocmd BufNewFile,BufRead */Dropbox/Notes/*.txt set filetype=ghmarkdown
 " Support for horn
 autocmd BufNewFile,BufRead *.hn set filetype=horn
 " Support for CPPCMS tmpl
