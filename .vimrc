@@ -77,6 +77,7 @@ nnoremap <script> <SID>commaf :CommaModeCancelled<CR>:set ft=
 nnoremap <script> <SID>commaU :CommaModeCancelled<CR>:set number!<CR>
 nnoremap <script> <SID>commaT :CommaModeCancelled<CR>:ToggleWhitespace<CR>
 nnoremap <script> <SID>commaH :CommaModeCancelled<CR>:Rooter<CR>
+nnoremap <script> <SID>commaE :CommaModeCancelled<CR>:enew<CR>
 nnoremap <script> <silent> <SID>comma :CommaModeCancelled<CR>
 
 nnoremap <script> <leader>y "+y
@@ -108,6 +109,7 @@ map Q <Nop>
 map q: <Nop>
 map q/ <Nop>
 map q? <Nop>
+map K <Nop>
 nnoremap c "_c
 vnoremap c "_c
 nnoremap C "_C
@@ -229,6 +231,11 @@ if executable("ag")
         \ --ignore "*.pdf"
         \ -g ""'
 endif
+
+" Ultisnips with alt+S on OS X
+let g:UltiSnipsExpandTrigger="ß"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Mouse
 set mousehide
