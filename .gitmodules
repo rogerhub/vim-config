@@ -1,45 +1,45 @@
+[submodule ".vim/bundle/commentary.vim"]
+	path = .vim/bundle/commentary.vim
+	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/ctrlp-cmatcher"]
+	path = .vim/bundle/ctrlp-cmatcher
+	url = https://github.com/JazzCore/ctrlp-cmatcher.git
+[submodule ".vim/bundle/ctrp"]
+	path = .vim/bundle/ctrp
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/gundo.vim"]
 	path = .vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
+[submodule ".vim/bundle/puppet-syntax-vim"]
+	path = .vim/bundle/puppet-syntax-vim
+	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/bundle/vim-abolish"]
+	path = .vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule ".vim/bundle/vim-better-whitespace"]
+	path = .vim/bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
+[submodule ".vim/bundle/vim-filebeagle/"]
+	path = .vim/bundle/vim-filebeagle
+	url = https://github.com/rogerhub/vim-filebeagle.git
 [submodule ".vim/bundle/vim-misc"]
 	path = .vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
 [submodule ".vim/bundle/vim-multiple-cursors"]
 	path = .vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule ".vim/bundle/vim-rooter"]
+	path = .vim/bundle/vim-rooter
+	url = https://github.com/airblade/vim-rooter
 [submodule ".vim/bundle/vim-sleuth"]
 	path = .vim/bundle/vim-sleuth
 	url = https://github.com/rogerhub/vim-sleuth.git
-[submodule ".vim/bundle/ctrp"]
-	path = .vim/bundle/ctrp
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/commentary.vim"]
-	path = .vim/bundle/commentary.vim
-	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-better-whitespace"]
-	path = .vim/bundle/vim-better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule ".vim/bundle/puppet-syntax-vim"]
-	path = .vim/bundle/puppet-syntax-vim
-	url = https://github.com/puppetlabs/puppet-syntax-vim.git
-[submodule ".vim/bundle/vim-abolish"]
-	path = .vim/bundle/vim-abolish
-	url = https://github.com/tpope/vim-abolish
-[submodule ".vim/bundle/ctrlp-py-matcher"]
-	path = .vim/bundle/ctrlp-py-matcher
-	url = https://github.com/FelikZ/ctrlp-py-matcher.git
-[submodule ".vim/bundle/ctrlp-cmatcher"]
-	path = .vim/bundle/ctrlp-cmatcher
-	url = https://github.com/JazzCore/ctrlp-cmatcher.git
 [submodule ".vim/bundle/vim-smooth-scroll"]
 	path = .vim/bundle/vim-smooth-scroll
 	url = https://github.com/terryma/vim-smooth-scroll.git
 [submodule ".vim/bundle/vim-visualstar"]
 	path = .vim/bundle/vim-visualstar
 	url = https://github.com/thinca/vim-visualstar.git
-[submodule ".vim/bundle/vim-rooter"]
-	path = .vim/bundle/vim-rooter
-	url = https://github.com/airblade/vim-rooter
-[submodule ".vim/bundle/ultisnips"]
-	path = .vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
