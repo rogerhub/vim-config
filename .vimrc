@@ -26,7 +26,7 @@ set ruler
 set rulerformat=%=%l,%c
 set scrolloff=0
 set showcmd
-set noshowmode
+set showmode
 set tabpagemax=50
 set wildmode=longest:list,full
 set wildmenu
@@ -137,46 +137,46 @@ nnoremap Ø O<ESC>S
 nnoremap <silent> <Space> :redraw<CR>:noh<CR>
 
 " Taken from https://github.com/tpope/vim-vinegar/blob/master/plugin/vinegar.vim
-let s:netrw_up = ''
-autocmd FileType netrw call s:setup_vinegar()
-function! s:setup_vinegar() abort
-  if empty(s:netrw_up)
-    " save netrw mapping
-    let s:netrw_up = maparg('-', 'n')
-    " saved string is like this:
-    " :exe "norm! 0"|call netrw#LocalBrowseCheck(<SNR>172_NetrwBrowseChgDir(1,'../'))<CR>
-    " remove <CR> at the end (otherwise raises "E488: Trailing characters")
-    let s:netrw_up = strpart(s:netrw_up, 0, strlen(s:netrw_up)-4)
-  endif
-endfunction
+" let s:netrw_up = ''
+" autocmd FileType netrw call s:setup_vinegar()
+" function! s:setup_vinegar() abort
+"   if empty(s:netrw_up)
+"     " save netrw mapping
+"     let s:netrw_up = maparg('-', 'n')
+"     " saved string is like this:
+"     " :exe "norm! 0"|call netrw#LocalBrowseCheck(<SNR>172_NetrwBrowseChgDir(1,'../'))<CR>
+"     " remove <CR> at the end (otherwise raises "E488: Trailing characters")
+"     let s:netrw_up = strpart(s:netrw_up, 0, strlen(s:netrw_up)-4)
+"   endif
+" endfunction
 
-function! s:seek(file)
-  let pattern = '^\%(| \)*'.escape(a:file, '.*[]~\').'[/*|@=]\=\%($\|\t\)'
-  call search(pattern, 'wc')
-  return pattern
-endfunction
+" function! s:seek(file)
+"   let pattern = '^\%(| \)*'.escape(a:file, '.*[]~\').'[/*|@=]\=\%($\|\t\)'
+"   call search(pattern, 'wc')
+"   return pattern
+" endfunction
 
-function! s:opendir(cmd)
-  if &filetype ==# 'netrw'
-    let currdir = fnamemodify(b:netrw_curdir, ':t')
-    execute s:netrw_up
-    call s:seek(currdir)
-  else
-    if empty(expand('%'))
-      execute a:cmd '.'
-    else
-      execute a:cmd '%:h/'
-      call s:seek(expand('#:t'))
-    endif
-  endif
-endfunction
+" function! s:opendir(cmd)
+"   if &filetype ==# 'netrw'
+"     let currdir = fnamemodify(b:netrw_curdir, ':t')
+"     execute s:netrw_up
+"     call s:seek(currdir)
+"   else
+"     if empty(expand('%'))
+"       execute a:cmd '.'
+"     else
+"       execute a:cmd '%:h/'
+"       call s:seek(expand('#:t'))
+"     endif
+"   endif
+" endfunction
 
-nnoremap ` :call <SID>opendir('edit')<CR>
-let g:netrw_liststyle = 0
-let g:netrw_banner = 0
-let g:netrw_sort_sequence = ''
-let g:netrw_mousemaps = 0
-let g:netrw_list_hide = '\(^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)\|\.pyc\)$'
+" nnoremap ` :call <SID>opendir('edit')<CR>
+" let g:netrw_liststyle = 0
+" let g:netrw_banner = 0
+" let g:netrw_sort_sequence = ''
+" let g:netrw_mousemaps = 0
+" let g:netrw_list_hide = '\(^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)\|\.pyc\)$'
 
 " NERDTree
 " let NERDTreeIgnore = [
@@ -193,6 +193,16 @@ let g:netrw_list_hide = '\(^\(./\|\.git/\|\.svn/\|\.hg/\|\.bundle/\|\.DS_Store\)
 "   \ '\.pdf$'
 "   \ ]
 " let NERDTreeMinimalUI = 1
+
+" Vim Filer
+" nnoremap ` :VimFilerExplorer -split -simple -parent -winwidth=35 -toggle -no-quit -auto-cd<CR>
+" let g:vimfiler_as_default_explorer = 1
+
+nnoremap ` :FileBeagleBufferDir<CR>
+let g:filebeagle_hijack_netrw = 1
+let g:filebeagle_buffer_normal_key_maps = {'FileBeagleBufferFocusOnParent': '`'}
+let g:filebeagle_buftype = "nowrite"
+autocmd User FileBeagleReadPost set buftype= nomodified
 
 let g:multi_cursor_exit_from_insert_mode = 0
 
