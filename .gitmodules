@@ -22,7 +22,7 @@
 [submodule ".vim/bundle/vim-better-whitespace"]
 	path = .vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule ".vim/bundle/vim-filebeagle/"]
+[submodule ".vim/bundle/vim-filebeagle"]
 	path = .vim/bundle/vim-filebeagle
 	url = https://github.com/rogerhub/vim-filebeagle.git
 [submodule ".vim/bundle/vim-misc"]
