@@ -1,5 +1,5 @@
-.vim/backup/*
-.vim/swap/*
+/.vim/backup/
+/.vim/swap/
 *.swp
 *.swo
 .vim/.netrwhist

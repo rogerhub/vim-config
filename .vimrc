@@ -71,7 +71,6 @@ nnoremap <script> <SID>commas :sp<CR><SID>comma
 nnoremap <script> <SID>commat :tabnew<CR><SID>comma
 nnoremap <script> <SID>commab :CommaModeCancelled<CR>:CtrlPBuffer<CR>
 nnoremap <script> <SID>commar :CommaModeCancelled<CR>:CtrlPMRU<CR>
-nnoremap <script> <SID>commad :CommaModeCancelled<CR>:ls<CR>:bd
 nnoremap <script> <SID>commac :CommaModeCancelled<CR>:cd 
 nnoremap <script> <SID>commaf :CommaModeCancelled<CR>:set ft=
 nnoremap <script> <SID>commaU :CommaModeCancelled<CR>:set number!<CR>
@@ -180,18 +179,22 @@ nnoremap <silent> <Space> :redraw<CR>:noh<CR>
 
 " NERDTree
 " let NERDTreeIgnore = [
+"   \ '^\.git$',
+"   \ '^\.svn$',
+"   \ '^\.hg$',
+"   \ '^\.bundle$',
+"   \ '.DS_Store$',
 "   \ '\.pyc$',
-"   \ '\.class$',
-"   \ '\.o$',
 "   \ '\.exe$',
 "   \ '\.so$',
 "   \ '\.dll$',
+"   \ '\.class$',
 "   \ '\.aux$',
 "   \ '\.log$',
 "   \ '\.result$',
 "   \ '\.output$',
-"   \ '\.pdf$'
-"   \ ]
+"   \ '\.pdf$',
+"   \ '\.o$']
 " let NERDTreeMinimalUI = 1
 
 " Vim Filer
@@ -203,6 +206,7 @@ let g:filebeagle_hijack_netrw = 1
 let g:filebeagle_buffer_normal_key_maps = {'FileBeagleBufferFocusOnParent': '`'}
 let g:filebeagle_buftype = "nowrite"
 autocmd User FileBeagleReadPost set buftype= nomodified
+set wildignore=.git,.svn,.hg,.bundle,*.DS_Store,*.pyc,*.exe,*.so,*.dll,*.class,*.aux,*.log,*.result,*.output,*.pdf
 
 let g:multi_cursor_exit_from_insert_mode = 0
 
@@ -295,7 +299,7 @@ nmap ‘ ]m
 nnoremap gp `[v`]
 
 " Eh?
-set modelines=0
+set modelines=5
 set autoindent
 set indentexpr=
 set backspace=indent,eol,start
@@ -331,16 +335,20 @@ autocmd BufNewFile,BufRead *.blade.php set filetype=blade
 autocmd BufNewFile,BufRead *.tex set filetype=tex
 " Julia
 autocmd BufNewFile,BufRead *.jl set filetype=julia
+" Coffee-script
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead *Cakefile set filetype=coffee
+autocmd BufNewFile,BufRead *.coffeekup,*.ck set filetype=coffee
+autocmd BufNewFile,BufRead *._coffee set filetype=coffee
 
 " Auto comment format
-autocmd FileType puppet,fish,julia set commentstring=#\ %s
+autocmd FileType puppet,fish,julia,coffee set commentstring=#\ %s
 
 " Don't ask me to save things read from stdin
 autocmd StdinReadPost * set nomodified
 autocmd StdinReadPre * set filetype= nowrap
 
 " Screw temp files
-silent !mkdir -p ~/.vim/backup ~/.vim/swap >/dev/null 2>&1
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
