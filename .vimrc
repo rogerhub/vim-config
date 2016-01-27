@@ -109,6 +109,7 @@ map q: <Nop>
 map q/ <Nop>
 map q? <Nop>
 map K <Nop>
+map & <Nop>
 nnoremap c "_c
 vnoremap c "_c
 nnoremap C "_C
