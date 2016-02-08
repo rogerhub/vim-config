@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
-[submodule ".vim/bundle/vim-abolish"]
-	path = .vim/bundle/vim-abolish
-	url = https://github.com/tpope/vim-abolish
 [submodule ".vim/bundle/vim-better-whitespace"]
 	path = .vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
